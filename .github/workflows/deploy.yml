@@ -45,13 +45,13 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
 
-          docker stop node-app || true
+         sudo docker stop node-app || true
 
-          docker rm node-app || true
+         sudo docker rm node-app || true
 
-          docker pull ${{ secrets.DOCKER_USERNAME }}/node-app:latest
+         sudo docker pull ${{ secrets.DOCKER_USERNAME }}/node-app:latest
 
-          docker run -d \
+         sudo docker run -d \
             --name node-app \
             -p 3000:3000 \
             ${{ secrets.DOCKER_USERNAME }}/node-app:latest
