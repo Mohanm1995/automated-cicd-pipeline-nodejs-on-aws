@@ -47,7 +47,7 @@ jobs:
 
          sudo docker stop node-app || true
 
-         sudo docker rm node-app || true
+         sudo docker rm -f node-app || true
 
          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/node-app:latest
 
